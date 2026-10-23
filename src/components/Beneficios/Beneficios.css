@@ -1,0 +1,90 @@
+.beneficios {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.beneficios__contenedor {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 18px 32px;
+}
+
+.beneficio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.beneficio__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f5c542;
+  color: #111318;
+}
+
+.beneficio__contenido {
+  min-width: 0;
+}
+
+.beneficio h3 {
+  margin: 0 0 3px;
+  color: #111318;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.beneficio p {
+  margin: 0;
+  color: #696969;
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .beneficios__contenedor {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .beneficios__contenedor {
+    padding: 20px 16px;
+    gap: 18px 12px;
+  }
+
+  .beneficio {
+    gap: 9px;
+    align-items: flex-start;
+  }
+
+  .beneficio__icono {
+    width: 38px;
+    height: 38px;
+  }
+
+  .beneficio__icono svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .beneficio h3 {
+    font-size: 0.72rem;
+  }
+
+  .beneficio p {
+    font-size: 0.67rem;
+  }
+}

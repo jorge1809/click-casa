@@ -1,0 +1,252 @@
+/* =========================================
+   CLICK CASA — CONTACTO
+========================================= */
+
+.contacto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  width: 100%;
+  max-width: var(--ancho-visual);
+  margin: 0 auto;
+
+  padding: 56px var(--margen-visual) 80px;
+
+  scroll-margin-top: 100px;
+}
+
+/* =========================================
+   CONTENIDO IZQUIERDO
+========================================= */
+
+.contacto__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 480px;
+
+  padding: clamp(32px, 4vw, 56px);
+
+  background: #171a20;
+  color: #ffffff;
+}
+
+.contacto__etiqueta {
+  margin-bottom: 22px;
+
+  color: #e9bc5a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.contacto__titulo {
+  max-width: 550px;
+  margin: 0;
+
+  color: #ffffff;
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2rem, 3.2vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.contacto__descripcion {
+  width: 100%;
+  max-width: 510px;
+  margin: 26px 0 30px;
+
+  color: #c6c9cf;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* =========================================
+   BOTÓN WHATSAPP
+========================================= */
+
+.contacto__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  max-width: 100%;
+  min-height: 52px;
+
+  padding: 14px 22px;
+
+  border: 0;
+  border-radius: 6px;
+
+  background: #e9bc5a;
+  color: #171a20;
+
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    background-color 200ms ease,
+    transform 200ms ease;
+}
+
+.contacto__boton:hover {
+  background: #d6a640;
+  transform: translateY(-2px);
+}
+
+.contacto__boton:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.contacto__nota {
+  margin: 18px 0 0;
+
+  color: #aeb4be;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================
+   CONTENEDOR DERECHO — IMAGEN
+========================================= */
+
+.contacto__visual {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 480px;
+
+  overflow: hidden;
+  background: #171a20;
+}
+
+/* =========================================
+   IMAGEN ESTÁTICA O GIF
+========================================= */
+
+.contacto__visual img {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   IMAGEN NO DISPONIBLE
+========================================= */
+
+.contacto__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  width: 100%;
+  min-height: 480px;
+
+  padding: 24px;
+
+  background: #171a20;
+  color: #9299a4;
+
+  text-align: center;
+}
+
+.contacto__placeholder span {
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .contacto {
+    grid-template-columns: 1fr;
+    padding: 40px 20px 56px;
+  }
+
+  .contacto__contenido {
+    min-height: auto;
+    padding: 40px 28px;
+  }
+
+  .contacto__visual {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .contacto__placeholder {
+    min-height: 100%;
+  }
+}
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 520px) {
+  .contacto {
+    padding: 32px 16px 48px;
+  }
+
+  .contacto__contenido {
+    padding: 36px 24px;
+  }
+
+  .contacto__titulo {
+    font-size: 2rem;
+  }
+
+  .contacto__descripcion {
+    font-size: 0.92rem;
+  }
+
+  .contacto__boton {
+    width: 100%;
+  }
+
+  .contacto__visual {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .contacto__boton {
+    transition: none;
+  }
+
+  .contacto__boton:hover {
+    transform: none;
+  }
+}

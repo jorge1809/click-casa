@@ -1,0 +1,307 @@
+/* =========================================
+   CLICK CASA — FOOTER
+========================================= */
+
+.footer {
+  padding: 64px var(--margen-visual) 28px;
+  background: #171a20;
+  color: #ffffff;
+}
+
+.footer__contenido {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.5fr)
+    repeat(3, minmax(0, 1fr));
+  width: 100%;
+  max-width: var(--ancho-visual);
+  margin: 0 auto;
+  gap: 44px;
+}
+
+/* =========================================
+   MARCA Y LOGOTIPO
+========================================= */
+
+.footer__marca {
+  max-width: 340px;
+}
+
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  text-decoration: none;
+}
+
+.footer__logo img {
+  display: block;
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer__eslogan {
+  margin: 0;
+  color: #d1d4da;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* =========================================
+   REDES SOCIALES
+========================================= */
+
+.footer__redes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.footer__redes a,
+.footer__red-social--pendiente {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #66552f;
+  border-radius: 50%;
+  color: #e9bc5a;
+  background: #20242b;
+}
+
+.footer__redes a {
+  text-decoration: none;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.footer__redes a:hover {
+  background: #e9bc5a;
+  border-color: #e9bc5a;
+  color: #171a20;
+  transform: translateY(-3px);
+}
+
+.footer__red-social--pendiente {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.footer__redes-nota {
+  display: block;
+  margin-top: 14px;
+  color: #949ba7;
+  font-size: 0.78rem;
+}
+
+/* =========================================
+   COLUMNAS
+========================================= */
+
+.footer__grupo {
+  min-width: 0;
+}
+
+.footer__titulo {
+  margin: 0 0 22px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.footer__alternador {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #e9bc5a;
+  font: inherit;
+  text-align: left;
+  cursor: default;
+}
+
+.footer__alternador svg {
+  display: none;
+}
+
+.footer__columna {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.footer__columna a,
+.footer__columna span {
+  color: #b9bec7;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.footer__columna a {
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.footer__columna a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer__columna .footer__enlace-destacado {
+  margin-top: 6px;
+  color: #e9bc5a;
+  font-weight: 700;
+}
+
+/* =========================================
+   FRANJA INFERIOR
+========================================= */
+
+.footer__inferior {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 24px;
+  width: 100%;
+  max-width: var(--ancho-visual);
+  margin: 48px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid #363c46;
+  color: #949ba7;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.footer__inferior p {
+  margin: 0;
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+.footer a:focus-visible,
+.footer__alternador:focus-visible {
+  outline: 2px solid #e9bc5a;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .footer {
+    padding: 48px 20px 24px;
+  }
+
+  .footer__contenido {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .footer__marca {
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+
+  .footer__grupo {
+    padding: 18px 0;
+    border-top: 1px solid #363c46;
+  }
+
+  .footer__inferior {
+    flex-direction: column;
+    margin-top: 28px;
+  }
+}
+
+/* =========================================
+   MÓVIL — ACORDEÓN
+========================================= */
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 20px 24px;
+  }
+
+  .footer__marca {
+    margin-bottom: 28px;
+  }
+
+  .footer__logo img {
+    width: 200px;
+  }
+
+  .footer__grupo {
+    padding: 0;
+  }
+
+  .footer__titulo {
+    margin: 0;
+  }
+
+  .footer__alternador {
+    min-height: 58px;
+    cursor: pointer;
+  }
+
+  .footer__alternador svg {
+    display: block;
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+  }
+
+  .footer__alternador[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  .footer__columna {
+    display: none;
+    padding: 4px 0 22px;
+  }
+
+  .footer__columna--abierta {
+    display: flex;
+  }
+
+  .footer__columna a,
+  .footer__columna span {
+    font-size: 0.9rem;
+  }
+
+  .footer__inferior {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .footer__redes a,
+  .footer__columna a,
+  .footer__alternador svg {
+    transition: none;
+  }
+
+  .footer__redes a:hover {
+    transform: none;
+  }
+}

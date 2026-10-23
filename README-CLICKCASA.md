@@ -1,0 +1,1 @@
+Etapa 1: rutas de carrito/pedido habilitadas y CarritoProvider integrado. Pendiente: número oficial de WhatsApp, catálogo e identidad visual. No usar el número anterior. Ejecutar npm install y npm run build en frontend.

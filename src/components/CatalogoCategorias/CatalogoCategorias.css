@@ -1,0 +1,340 @@
+/* =========================================
+   CLICK CASA — CATÁLOGO DE CATEGORÍAS
+========================================= */
+
+.catalogo-categorias {
+  width: 100%;
+  max-width: var(--ancho-visual);
+  margin: 0 auto;
+  padding: 48px var(--margen-visual) 48px;
+  scroll-margin-top: 0;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.catalogo-categorias__encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.catalogo-categorias__etiqueta {
+  display: block;
+  margin-bottom: 12px;
+  color: #b58a32;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.catalogo-categorias__encabezado h2 {
+  margin: 0 0 12px;
+  color: #111318;
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.catalogo-categorias__encabezado p {
+  max-width: 560px;
+  margin: 0;
+  color: #686d75;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CONTROLES DEL CARRUSEL
+========================================= */
+
+.catalogo-categorias__controles {
+  display: flex;
+  flex-shrink: 0;
+  gap: 10px;
+}
+
+.catalogo-categorias__controles button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #d9dce0;
+  border-radius: 50%;
+  background: #fff;
+  color: #111318;
+  cursor: pointer;
+  transition:
+    background-color 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+}
+
+.catalogo-categorias__controles button:hover:not(:disabled) {
+  background: #111318;
+  border-color: #111318;
+  color: #e9bc5a;
+}
+
+.catalogo-categorias__controles button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.catalogo-categorias__controles button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.catalogo-categorias__controles button:focus-visible,
+.catalogo-categoria:focus-visible {
+  outline: 3px solid #e9bc5a;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   CARRUSEL EMBLA
+========================================= */
+
+.catalogo-categorias__viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+.catalogo-categorias__carrusel {
+  display: flex;
+  margin-left: -16px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.catalogo-categorias__slide {
+  flex: 0 0 25%;
+  min-width: 0;
+  padding-left: 16px;
+}
+
+/* =========================================
+   TARJETA DE CATEGORÍA
+========================================= */
+
+.catalogo-categoria {
+  display: block;
+  height: 100%;
+  color: #111318;
+  text-decoration: none;
+}
+
+/* =========================================
+   CONTENEDOR DE IMAGEN
+========================================= */
+
+.catalogo-categoria__imagen {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid #e8eaed;
+  border-radius: 12px;
+  background: #f4f5f6;
+}
+
+.catalogo-categoria__imagen > img,
+.catalogo-categoria__imagen > div {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+/* .catalogo-categoria__imagen > img {
+  display: block;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 400ms ease;
+} */
+
+.catalogo-categoria__imagen > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 400ms ease;
+}
+
+.catalogo-categoria__imagen > div {
+  display: grid;
+  place-items: center;
+  background: #f0f1f2;
+  color: #969ba3;
+}
+
+/* =========================================
+   INFORMACIÓN DE LA CATEGORÍA
+========================================= */
+
+.catalogo-categoria__contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 2px;
+}
+
+.catalogo-categoria__contenido > div {
+  min-width: 0;
+}
+
+.catalogo-categoria__contenido h3 {
+  margin: 0 0 8px;
+  color: #111318;
+  font-family: var(--font-heading, sans-serif);
+  font-size: clamp(1.2rem, 1.6vw, 1.65rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+
+.catalogo-categoria__contenido span {
+  color: #737983;
+  font-size: 0.85rem;
+}
+
+.catalogo-categoria__contenido svg {
+  flex-shrink: 0;
+  color: #b58a32;
+  transition:
+    color 250ms ease,
+    transform 250ms ease;
+}
+
+/* =========================================
+   INTERACCIONES
+========================================= */
+
+@media (hover: hover) {
+  .catalogo-categoria:hover .catalogo-categoria__imagen img {
+    transform: scale(1.025);
+  }
+
+  .catalogo-categoria:hover .catalogo-categoria__contenido svg {
+    transform: translate(3px, -3px);
+    color: #111318;
+  }
+
+  .catalogo-categoria:hover .catalogo-categoria__contenido h3 {
+    color: #a57a26;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .catalogo-categorias {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .catalogo-categorias__slide {
+    flex-basis: 50%;
+  }
+
+  .catalogo-categoria__contenido h3 {
+    font-size: 1.4rem;
+  }
+}
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 600px) {
+  .catalogo-categorias {
+    padding: 32px var(--margen-visual) 32px;
+  }
+
+  .catalogo-categorias__encabezado {
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .catalogo-categorias__etiqueta {
+    margin-bottom: 8px;
+    font-size: 0.7rem;
+  }
+
+  .catalogo-categorias__encabezado h2 {
+    margin-bottom: 10px;
+    font-size: clamp(1.7rem, 6vw, 2.3rem);
+  }
+
+  .catalogo-categorias__encabezado p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .catalogo-categorias__controles {
+    gap: 6px;
+  }
+
+  .catalogo-categorias__controles button {
+    width: 36px;
+    height: 36px;
+  }
+
+  .catalogo-categorias__carrusel {
+    margin-left: -12px;
+  }
+
+  .catalogo-categorias__slide {
+    flex-basis: 88%;
+    padding-left: 12px;
+  }
+
+  .catalogo-categoria__imagen {
+    aspect-ratio: 4 / 5;
+    border-radius: 10px;
+  }
+
+  .catalogo-categoria__contenido {
+    padding: 14px 2px;
+  }
+
+  .catalogo-categoria__contenido h3 {
+    font-size: 1.25rem;
+  }
+
+  .catalogo-categoria__contenido span {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .catalogo-categoria__imagen img,
+  .catalogo-categoria__contenido svg,
+  .catalogo-categorias__controles button {
+    transition: none;
+  }
+
+  .catalogo-categoria:hover .catalogo-categoria__imagen img,
+  .catalogo-categoria:hover .catalogo-categoria__contenido svg {
+    transform: none;
+  }
+}

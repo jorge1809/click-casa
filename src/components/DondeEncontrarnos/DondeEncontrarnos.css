@@ -1,0 +1,189 @@
+/* =========================================
+   CLICK CASA — UBICACIÓN
+========================================= */
+
+.ubicacion {
+  width: 100%;
+  max-width: var(--ancho-visual);
+  margin: 0 auto;
+  padding: 80px var(--margen-visual);
+  scroll-margin-top: 150px;
+}
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.ubicacion__encabezado {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.ubicacion__etiqueta {
+  display: block;
+  margin-bottom: 14px;
+  color: #a67b27;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.ubicacion__encabezado h2 {
+  margin: 0 0 16px;
+  color: #171a20;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  letter-spacing: -0.04em;
+}
+
+.ubicacion__encabezado p {
+  margin: 0;
+  color: #5d6470;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.ubicacion__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 0;
+  overflow: hidden;
+  border: 1px solid #e2e5e9;
+  border-radius: 12px;
+  background: #fff;
+}
+
+/* =========================================
+   GOOGLE MAPS
+========================================= */
+
+.ubicacion__mapa {
+  min-height: 430px;
+  background: #eef0f3;
+}
+
+.ubicacion__mapa iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  border: 0;
+}
+
+/* =========================================
+   INFORMACIÓN DE CONTACTO
+========================================= */
+
+.ubicacion__informacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding: clamp(28px, 4vw, 48px);
+}
+
+.ubicacion__dato {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.ubicacion__dato > svg {
+  flex-shrink: 0;
+  color: #b48632;
+}
+
+.ubicacion__dato h3 {
+  margin: 0 0 8px;
+  color: #171a20;
+  font-size: 1rem;
+}
+
+.ubicacion__dato p {
+  margin: 0;
+  color: #5d6470;
+  line-height: 1.7;
+}
+
+.ubicacion__dato a {
+  color: #343b46;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ubicacion__dato a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   BOTÓN CÓMO LLEGAR
+========================================= */
+
+.ubicacion__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: flex-start;
+  min-height: 52px;
+  padding: 14px 22px;
+  border-radius: 6px;
+  background: #171a20;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ubicacion__boton:hover {
+  background: #343b46;
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+.ubicacion a:focus-visible {
+  outline: 3px solid #b48632;
+  outline-offset: 4px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+  .ubicacion {
+    padding: 64px 20px;
+  }
+
+  .ubicacion__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ubicacion__mapa,
+  .ubicacion__mapa iframe {
+    min-height: 350px;
+  }
+}
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 520px) {
+  .ubicacion__informacion {
+    padding: 28px 22px;
+  }
+
+  .ubicacion__mapa,
+  .ubicacion__mapa iframe {
+    min-height: 280px;
+  }
+
+  .ubicacion__boton {
+    width: 100%;
+  }
+}

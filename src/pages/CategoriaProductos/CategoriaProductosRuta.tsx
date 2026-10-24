@@ -46,7 +46,9 @@ function CategoriaProductosRuta() {
         productos={productosCategoria}
         nombreCategoria={() => categoria.nombre}
         tituloEditorial={categoria.tituloEditorial}
-        imagenPortada={rutaPublica(`/images/encabezados/${categoria.slug}.png`)}
+        imagenPortada={rutaPublica(
+          `/images/encabezados/${categoria.slug}.webp`,
+        )}
       />
     </>
   );

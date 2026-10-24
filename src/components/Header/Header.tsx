@@ -66,106 +66,103 @@ function Header() {
   }
 
   return (
-    <>
-      <div className="announcement">Tus electrodomésticos, a solo un clic</div>
-
-      <header
-        className="header"
-        onKeyDown={(event) => {
-          if (event.key === "Escape" && menuAbierto) {
-            cerrarMenu();
-            botonMenuRef.current?.focus();
-          }
-        }}
-      >
-        <div className="header__contenido">
-          <Link
-            className="header__logo"
-            to="/"
-            onClick={cerrarMenu}
-            aria-label="Click Casa, ir al inicio"
-          >
-            <img
-              src={rutaPublica("/images/logo-click-casa.webp")}
-              alt="Click Casa"
-              className="header__logo-imagen"
-            />
-          </Link>
-
-          <form
-            className="header__buscador"
-            role="search"
-            onSubmit={buscarProducto}
-          >
-            <input
-              type="search"
-              value={busqueda}
-              onChange={(event) => actualizarBusqueda(event.target.value)}
-              placeholder="¿Qué producto estás buscando?"
-              aria-label="Buscar productos"
-              maxLength={100}
-            />
-
-            <button type="submit" aria-label="Buscar productos">
-              <Search size={21} aria-hidden="true" />
-            </button>
-          </form>
-
-          <Link
-            className="header__carrito"
-            to="/carrito"
-            onClick={cerrarMenu}
-            aria-label={`Carrito con ${totalProductos} productos`}
-          >
-            <ShoppingCart size={24} aria-hidden="true" />
-            <span>Carrito</span>
-
-            {totalProductos > 0 && (
-              <span className="header__contador">{totalProductos}</span>
-            )}
-          </Link>
-
-          <button
-            ref={botonMenuRef}
-            className="header__menu-boton"
-            type="button"
-            aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
-            aria-expanded={menuAbierto}
-            aria-controls="menu-movil"
-            onClick={() => setMenuAbierto((abierto) => !abierto)}
-          >
-            {menuAbierto ? (
-              <X size={24} aria-hidden="true" />
-            ) : (
-              <Menu size={24} aria-hidden="true" />
-            )}
-          </button>
-        </div>
-
-        <nav className="header__nav" aria-label="Navegación principal">
-          <div className="header__nav-contenido">
-            {enlaces.map((enlace) => (
-              <Link key={enlace.href} to={enlace.href}>
-                {enlace.texto}
-              </Link>
-            ))}
-          </div>
-        </nav>
-
-        <nav
-          className="menu-movil"
-          id="menu-movil"
-          aria-label="Navegación móvil"
-          hidden={!menuAbierto}
+    <header
+      className="header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && menuAbierto) {
+          cerrarMenu();
+          botonMenuRef.current?.focus();
+        }
+      }}
+    >
+      <div className="header__contenido">
+        <Link
+          className="header__logo"
+          to="/"
+          onClick={cerrarMenu}
+          aria-label="Click Casa, ir al inicio"
         >
+          <img
+            src={rutaPublica("/images/logo-click-casa.webp")}
+            alt="Click Casa"
+            className="header__logo-imagen"
+          />
+        </Link>
+
+        <form
+          className="header__buscador"
+          role="search"
+          onSubmit={buscarProducto}
+        >
+          <input
+            type="search"
+            value={busqueda}
+            onChange={(event) => actualizarBusqueda(event.target.value)}
+            placeholder="¿Qué producto estás buscando?"
+            aria-label="Buscar productos"
+            maxLength={100}
+          />
+
+          <button type="submit" aria-label="Buscar productos">
+            <Search size={21} aria-hidden="true" />
+          </button>
+        </form>
+
+        <Link
+          className="header__carrito"
+          to="/carrito"
+          onClick={cerrarMenu}
+          aria-label={`Carrito con ${totalProductos} productos`}
+        >
+          <ShoppingCart size={24} aria-hidden="true" />
+          <span>Carrito</span>
+
+          {totalProductos > 0 && (
+            <span className="header__contador">{totalProductos}</span>
+          )}
+        </Link>
+
+        <button
+          ref={botonMenuRef}
+          className="header__menu-boton"
+          type="button"
+          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={menuAbierto}
+          aria-controls="menu-movil"
+          onClick={() => setMenuAbierto((abierto) => !abierto)}
+        >
+          {menuAbierto ? (
+            <X size={24} aria-hidden="true" />
+          ) : (
+            <Menu size={24} aria-hidden="true" />
+          )}
+        </button>
+      </div>
+
+      <nav className="header__nav" aria-label="Navegación principal">
+        <div className="header__nav-contenido">
           {enlaces.map((enlace) => (
-            <Link key={enlace.href} to={enlace.href} onClick={cerrarMenu}>
+            <Link key={enlace.href} to={enlace.href}>
               {enlace.texto}
             </Link>
           ))}
-        </nav>
-      </header>
-    </>
+        </div>
+      </nav>
+
+      <nav
+        className="menu-movil"
+        id="menu-movil"
+        aria-label="Navegación móvil"
+        hidden={!menuAbierto}
+      >
+        {enlaces.map((enlace) => (
+          <Link key={enlace.href} to={enlace.href} onClick={cerrarMenu}>
+            {enlace.texto}
+          </Link>
+        ))}
+      </nav>
+      <div className="announcement">Tus electrodomésticos, a solo un clic</div>
+    </header>
   );
 }
 

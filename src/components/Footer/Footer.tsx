@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 
 import { categoriasProducto } from "../../data/categoriasProducto";
 import { crearEnlaceWhatsApp } from "../../config/contacto";
-
+import { rutaPublica } from "../../utils/rutaPublica";
 import "./Footer.css";
 
 type GrupoFooter = "productos" | "atencion" | "informacion";
@@ -30,9 +30,9 @@ function Footer() {
             aria-label="Click Casa: volver al inicio"
           >
             <img
-              src="/images/logo-click-casa.webp"
+              src={rutaPublica("/images/logo-click-casa.webp")}
               alt="Click Casa"
-              width="220"
+              width={220}
             />
           </Link>
 

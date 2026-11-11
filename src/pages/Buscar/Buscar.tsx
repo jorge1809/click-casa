@@ -26,13 +26,23 @@ function Buscar() {
     () => (parametros.get("q") ?? "").trim(),
     () => "",
   );
+  const marcaSolicitada = useSyncExternalStore(
+    suscribir,
+    () => (parametros.get("marca") ?? "").trim().slice(0, 100),
+    () => "",
+  );
+  const marca =
+    productos.find((p) => normalizar(p.marca) === normalizar(marcaSolicitada))
+      ?.marca ?? marcaSolicitada;
 
   const palabras = normalizar(consulta).split(/\s+/).filter(Boolean);
 
   const resultados =
-    palabras.length === 0
+    palabras.length === 0 && !marca
       ? []
       : productos.filter((producto) => {
+          if (marca && normalizar(producto.marca) !== normalizar(marca))
+            return false;
           const categoria = categoriasProducto.find(
             (categoria) => categoria.id === producto.categoriaId,
           );
@@ -53,30 +63,50 @@ function Buscar() {
   return (
     <main className="buscar" id="contenido-principal" tabIndex={-1}>
       <SEO
-        titulo={consulta ? `Resultados para ${consulta}` : "Buscar productos"}
+        titulo={
+          marca
+            ? `Productos de ${marca}`
+            : consulta
+              ? `Resultados para ${consulta}`
+              : "Buscar productos"
+        }
         descripcion="Busca productos por marca, modelo o categoría en Click Casa."
         noIndex
       />
       <nav className="buscar__ruta" aria-label="Ruta de navegación">
         <Link to="/">Inicio</Link>
         <span aria-hidden="true">/</span>
-        <span aria-current="page">Buscar productos</span>
+        {marca && (
+          <>
+            <Link to="/#marcas">Marcas</Link>
+            <span aria-hidden="true">/</span>
+          </>
+        )}
+        <span aria-current="page">{marca || "Buscar productos"}</span>
       </nav>
 
       <header className="buscar__encabezado">
         <h1>
-          {consulta
-            ? `Resultados para “${consulta}”`
-            : "Buscar electrodomésticos"}
+          {marca
+            ? `Productos de ${marca}`
+            : consulta
+              ? `Resultados para “${consulta}”`
+              : "Buscar electrodomésticos"}
         </h1>
 
         <p>
-          Encuentra refrigeradoras, lavadoras, televisores, cocinas y más
-          productos para tu hogar.
+          {marca
+            ? `Explora los productos de ${marca} y consulta con nuestro equipo el precio y la disponibilidad.`
+            : "Encuentra refrigeradoras, lavadoras, televisores, cocinas y más productos para tu hogar."}
         </p>
+        {marca && (
+          <p>
+            <Link to="/#marcas">← Elegir otra marca</Link>
+          </p>
+        )}
       </header>
 
-      {consulta && (
+      {(consulta || marca) && (
         <p className="buscar__cantidad" role="status">
           {resultados.length}{" "}
           {resultados.length === 1
@@ -104,15 +134,19 @@ function Buscar() {
       ) : (
         <section className="buscar__vacio">
           <h2>
-            {consulta
-              ? "No encontramos productos con esa búsqueda"
-              : "Explora nuestras categorías"}
+            {marca
+              ? "No hay productos para esta marca"
+              : consulta
+                ? "No encontramos productos con esa búsqueda"
+                : "Explora nuestras categorías"}
           </h2>
 
           <p>
-            {consulta
-              ? "Prueba con otra marca, modelo o tipo de electrodoméstico."
-              : "También puedes explorar nuestro catálogo por categorías."}
+            {marca
+              ? "Elige otra marca o explora las categorías disponibles."
+              : consulta
+                ? "Prueba con otra marca, modelo o tipo de electrodoméstico."
+                : "También puedes explorar nuestro catálogo por categorías."}
           </p>
 
           <div className="buscar__categorias">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { Link } from "react-router";
 import { ChevronDown } from "lucide-react";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
@@ -6,7 +6,6 @@ import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { categoriasProducto } from "../../data/categoriasProducto";
 import { crearEnlaceWhatsApp } from "../../config/contacto";
 import { rutaPublica } from "../../utils/rutaPublica";
-import { funcionalidades } from "../../config/funcionalidades";
 import "./Footer.css";
 
 type GrupoFooter = "productos" | "atencion" | "informacion";
@@ -14,6 +13,15 @@ type GrupoFooter = "productos" | "atencion" | "informacion";
 function Footer() {
   const categoriasDestacadas = categoriasProducto.slice(0, 6);
 
+  const movil = useSyncExternalStore(
+    (notificar) => {
+      const media = window.matchMedia("(max-width: 600px)");
+      media.addEventListener("change", notificar);
+      return () => media.removeEventListener("change", notificar);
+    },
+    () => window.matchMedia("(max-width: 600px)").matches,
+    () => false,
+  );
   const [grupoAbierto, setGrupoAbierto] = useState<GrupoFooter | null>(null);
 
   const alternarGrupo = (grupo: GrupoFooter) => {
@@ -37,7 +45,9 @@ function Footer() {
             />
           </Link>
 
-          <p className="footer__eslogan">Tu hogar, nuestra inspiración.</p>
+          <p className="footer__eslogan">
+            Tus electrodomésticos a tan solo un click
+          </p>
 
           <div className="footer__redes">
             <a
@@ -80,7 +90,7 @@ function Footer() {
             <button
               type="button"
               className="footer__alternador"
-              aria-expanded={grupoAbierto === "productos"}
+              aria-expanded={!movil || grupoAbierto === "productos"}
               aria-controls="footer-productos"
               onClick={() => alternarGrupo("productos")}
             >
@@ -114,7 +124,7 @@ function Footer() {
             <button
               type="button"
               className="footer__alternador"
-              aria-expanded={grupoAbierto === "atencion"}
+              aria-expanded={!movil || grupoAbierto === "atencion"}
               aria-controls="footer-atencion"
               onClick={() => alternarGrupo("atencion")}
             >
@@ -131,9 +141,6 @@ function Footer() {
             aria-label="Atención al cliente"
           >
             <Link to="/#contacto">Contacto</Link>
-            {funcionalidades.carritoHabilitado && (
-              <Link to="/carrito">Mi carrito</Link>
-            )}
 
             <a
               href={crearEnlaceWhatsApp(
@@ -153,7 +160,7 @@ function Footer() {
             <button
               type="button"
               className="footer__alternador"
-              aria-expanded={grupoAbierto === "informacion"}
+              aria-expanded={!movil || grupoAbierto === "informacion"}
               aria-controls="footer-informacion"
               onClick={() => alternarGrupo("informacion")}
             >

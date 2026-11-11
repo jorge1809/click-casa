@@ -632,3 +632,7 @@
     transform: none;
   }
 }
+
+.detalle-producto__stock--consulta {
+  color: #4b5563;
+}

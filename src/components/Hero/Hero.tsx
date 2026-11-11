@@ -25,8 +25,8 @@ function Hero() {
         </span>
 
         <h1 className="hero__titulo" id="hero-titulo">
-          Equipa tu hogar
-          <span> a solo un clic.</span>
+          Tus electrodomésticos
+          <span> a tan solo un click</span>
         </h1>
 
         <p className="hero__descripcion">
@@ -42,7 +42,7 @@ function Hero() {
 
         <div className="hero__detalle">
           <span className="hero__detalle-linea" aria-hidden="true" />
-          <p>Tus electrodomésticos, a solo un clic.</p>
+          <p>Tus electrodomésticos a tan solo un click</p>
         </div>
       </div>
 

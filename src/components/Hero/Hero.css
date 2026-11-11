@@ -202,7 +202,7 @@
   }
 
   .hero__titulo {
-    font-size: clamp(2.5rem, 10vw, 3.6rem);
+    font-size: clamp(1.85rem, 8.8vw, 2.5rem);
   }
 
   .hero__descripcion {

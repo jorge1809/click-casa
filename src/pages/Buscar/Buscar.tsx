@@ -1,3 +1,5 @@
+import { useSyncExternalStore } from "react";
+import SEO from "../../components/SEO/SEO";
 import { Link, useSearchParams } from "react-router";
 
 import { productos } from "../../data/productos";
@@ -14,10 +16,16 @@ function normalizar(texto: string): string {
     .trim();
 }
 
+const suscribir = () => () => {};
+
 function Buscar() {
   const [parametros] = useSearchParams();
 
-  const consulta = (parametros.get("q") ?? "").trim();
+  const consulta = useSyncExternalStore(
+    suscribir,
+    () => (parametros.get("q") ?? "").trim(),
+    () => "",
+  );
 
   const palabras = normalizar(consulta).split(/\s+/).filter(Boolean);
 
@@ -43,7 +51,12 @@ function Buscar() {
         });
 
   return (
-    <main className="buscar">
+    <main className="buscar" id="contenido-principal" tabIndex={-1}>
+      <SEO
+        titulo={consulta ? `Resultados para ${consulta}` : "Buscar productos"}
+        descripcion="Busca productos por marca, modelo o categoría en Click Casa."
+        noIndex
+      />
       <nav className="buscar__ruta" aria-label="Ruta de navegación">
         <Link to="/">Inicio</Link>
         <span aria-hidden="true">/</span>

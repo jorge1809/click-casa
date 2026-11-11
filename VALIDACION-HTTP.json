@@ -1,0 +1,391 @@
+{
+  "fecha": "2026-11-11T16:21:58.277Z",
+  "origen": "http://127.0.0.1:4182/click-casa/",
+  "resultados": [
+    {
+      "ruta": "404.html",
+      "estado": 200
+    },
+    {
+      "ruta": "buscar/",
+      "estado": 200
+    },
+    {
+      "ruta": "carrito/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/abanicos/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/aires-acondicionados/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/arroceras/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/cafeteras/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/camas/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/cocinas/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/exhibidores/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/freezer/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/lavadoras/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/licuadoras/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/planchas/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/refrigeradoras/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/sandwicheras/",
+      "estado": 200
+    },
+    {
+      "ruta": "catalogo/smart-tv/",
+      "estado": 200
+    },
+    {
+      "ruta": "",
+      "estado": 200
+    },
+    {
+      "ruta": "pedido/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/1/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/10/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/11/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/12/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/13/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/14/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/15/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/16/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/17/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/18/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/19/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/2/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/20/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/21/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/22/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/23/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/24/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/25/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/26/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/27/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/28/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/29/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/3/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/30/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/31/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/32/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/33/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/34/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/35/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/36/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/37/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/38/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/39/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/4/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/40/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/41/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/42/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/43/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/44/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/45/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/46/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/47/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/48/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/49/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/5/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/50/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/51/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/52/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/53/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/54/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/55/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/56/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/57/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/58/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/59/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/6/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/60/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/61/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/62/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/63/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/64/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/65/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/66/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/67/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/68/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/69/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/7/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/8/",
+      "estado": 200
+    },
+    {
+      "ruta": "productos/9/",
+      "estado": 200
+    },
+    {
+      "ruta": "buscar?q=Hisense",
+      "estado": 308,
+      "destino": "/click-casa/buscar/?q=Hisense"
+    },
+    {
+      "ruta": "catalogo/refrigeradoras",
+      "estado": 308,
+      "destino": "/click-casa/catalogo/refrigeradoras/"
+    },
+    {
+      "ruta": "productos/2",
+      "estado": 308,
+      "destino": "/click-casa/productos/2/"
+    },
+    {
+      "ruta": "carrito",
+      "estado": 308,
+      "destino": "/click-casa/carrito/"
+    },
+    {
+      "ruta": "pedido",
+      "estado": 308,
+      "destino": "/click-casa/pedido/"
+    },
+    {
+      "ruta": "productos/999999",
+      "estado": 404
+    },
+    {
+      "ruta": "ruta-inexistente",
+      "estado": 404
+    }
+  ]
+}

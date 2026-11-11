@@ -1,3 +1,4 @@
+import Marcas from "../../components/Marcas/Marcas";
 import Hero from "../../components/Hero/Hero";
 import CatalogoCategorias from "../../components/CatalogoCategorias/CatalogoCategorias";
 import Beneficios from "../../components/Beneficios/Beneficios";
@@ -11,9 +12,9 @@ import { beneficios } from "../../data/beneficios";
 
 function Inicio() {
   return (
-    <main>
+    <main id="contenido-principal" tabIndex={-1}>
       <SEO
-        titulo="Click Casa | Electrodomésticos"
+        titulo="Electrodomésticos para tu hogar y negocio"
         descripcion="Descubre refrigeradoras, lavadoras, televisores, cocinas y más en Click Casa, Managua. Explora nuestro catálogo, visítanos o consulta por WhatsApp."
       />
 
@@ -22,6 +23,8 @@ function Inicio() {
       <Beneficios beneficios={beneficios} />
 
       <CatalogoCategorias categorias={categoriasProducto} />
+
+      <Marcas />
 
       <QuienesSomos />
 

@@ -1,3 +1,4 @@
+import { urlSitio } from "../../utils/urlSitio";
 import { useEffect } from "react";
 import { useLocation } from "react-router";
 
@@ -17,11 +18,7 @@ function SEO({ titulo, descripcion, noIndex = false }: SEOProps) {
       ? tituloLimpio
       : `${tituloLimpio} | Click Casa`;
 
-  const urlBase = import.meta.env.VITE_SITE_URL as string | undefined;
-
-  const urlCanonica = urlBase
-    ? new URL(pathname, `${urlBase.replace(/\/+$/, "")}/`).href
-    : undefined;
+  const urlCanonica = urlSitio(pathname);
 
   useEffect(() => {
     document.title = tituloCompleto;

@@ -10,7 +10,7 @@ function Contacto() {
   const [imagenError, setImagenError] = useState(false);
 
   // const imagen = rutaPublica("/images/contacto-click-casa.gif");
-  const imagen = rutaPublica("/images/contacto-click-casa.png");
+  const imagen = rutaPublica("/images/contacto-click-casa.jpg");
   return (
     <section
       className="contacto"
@@ -25,9 +25,9 @@ function Contacto() {
         </h2>
 
         <p className="contacto__descripcion">
-          Encuentra los electrodomésticos ideales para tu hogar. Te ayudamos a
-          comparar modelos, consultar precios, verificar disponibilidad y
-          conocer las opciones de entrega.
+          Encuentra los electrodomésticos ideales para tu hogar y/o Negocio. Te
+          ayudamos a comparar modelos, consultar precios, verificar
+          disponibilidad y conocer las opciones de entrega.
         </p>
 
         <a
@@ -55,7 +55,7 @@ function Contacto() {
         ) : (
           <img
             src={imagen}
-            alt="Click Casa: tus electrodomésticos, a solo un click"
+            alt="Click Casa: Tus electrodomésticos a tan solo un click"
             loading="lazy"
             decoding="async"
             onError={() => setImagenError(true)}

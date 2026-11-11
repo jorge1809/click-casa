@@ -5,30 +5,19 @@ import { Link } from "react-router";
 import ImagenConFallback from "../ImagenConFallback/ImagenConFallback";
 import type { CategoriaProducto } from "../../types/CategoriaProducto";
 import "./CatalogoCategorias.css";
-import Autoplay from "embla-carousel-autoplay";
 
 interface CatalogoCategoriasProps {
   categorias: CategoriaProducto[];
 }
 
 function CatalogoCategorias({ categorias }: CatalogoCategoriasProps) {
-  // Inicializamos Embla sin Autoplay para evitar el error.
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
+  // Navegación manual: no hay movimiento automático que distraiga al usuario.
+  const [emblaRef, emblaApi] = useEmblaCarousel({
       align: "start",
       containScroll: "trimSnaps",
       loop: categorias.length > 4,
       slidesToScroll: 1,
-    },
-    [
-      Autoplay({
-        delay: 5000,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true,
-        playOnInit: true,
-      }),
-    ],
-  );
+  });
 
   const suscribirBotones = useCallback(
     (notificar: () => void) => {

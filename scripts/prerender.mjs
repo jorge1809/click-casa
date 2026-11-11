@@ -119,6 +119,7 @@ function generarDocumento(plantilla, htmlReact) {
 
 const servidor = await createServer({
   configFile: path.join(raiz, "vite.config.ts"),
+  mode: "production",
   server: {
     middlewareMode: true,
   },
@@ -137,6 +138,7 @@ try {
   // Rutas activas de Click Casa.
   const rutas = [
     "/",
+    "/buscar",
     ...categoriasProducto.map((categoria) => `/catalogo/${categoria.slug}`),
     ...productos.map((producto) => `/productos/${producto.id}`),
   ];
@@ -171,6 +173,25 @@ try {
     console.log(`Prerenderizado: ${ruta}`);
   }
 
+  // A CSR shell handles unknown routes on static hosts without hydrating unrelated HTML.
+  const shell = plantilla.replace(
+    "</head>",
+    '<title>Click Casa</title><meta name="robots" content="noindex, follow"></head>',
+  );
+  await writeFile(path.join(raiz, "dist", "404.html"), shell, "utf8");
+  const base = process.env.GITHUB_PAGES === "true" ? "/click-casa/" : "/";
+  for (const retirada of ["carrito", "pedido"]) {
+    const destino = path.join(raiz, "dist", retirada);
+    await mkdir(destino, { recursive: true });
+    await writeFile(
+      path.join(destino, "index.html"),
+      shell.replace(
+        "</head>",
+        `<meta http-equiv="refresh" content="0;url=${base}"></head>`,
+      ),
+      "utf8",
+    );
+  }
   console.log(`Prerenderizado completado: ${rutasUnicas.length} rutas.`);
 } finally {
   await servidor.close();

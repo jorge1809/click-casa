@@ -1,0 +1,22 @@
+.marcas {
+  max-width: 1280px;
+  margin: auto;
+  padding: 48px var(--margen-visual, 24px);
+}
+.marcas h2 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+}
+.marcas ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+.marcas li {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-weight: 700;
+}

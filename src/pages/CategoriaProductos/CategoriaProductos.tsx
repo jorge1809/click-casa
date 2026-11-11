@@ -18,8 +18,6 @@ interface CategoriaProductosProps {
 
 const opcionesOrden = [
   { valor: "destacados", texto: "Orden original" },
-  { valor: "precio-asc", texto: "Precio: menor a mayor" },
-  { valor: "precio-desc", texto: "Precio: mayor a menor" },
   { valor: "nombre", texto: "Nombre: A–Z" },
 ];
 
@@ -42,11 +40,7 @@ function CategoriaProductos({
 
   const productosVisibles = [...productos];
 
-  if (orden === "precio-asc") {
-    productosVisibles.sort((a, b) => a.precioUSD - b.precioUSD);
-  } else if (orden === "precio-desc") {
-    productosVisibles.sort((a, b) => b.precioUSD - a.precioUSD);
-  } else if (orden === "nombre") {
+  if (orden === "nombre") {
     productosVisibles.sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
   }
 
@@ -68,7 +62,11 @@ function CategoriaProductos({
   }
 
   return (
-    <main className="categoria-productos">
+    <main
+      className="categoria-productos"
+      id="contenido-principal"
+      tabIndex={-1}
+    >
       <section
         className={`categoria-productos__hero ${
           imagenPortada

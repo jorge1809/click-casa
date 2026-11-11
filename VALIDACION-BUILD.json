@@ -1,0 +1,451 @@
+{
+  "fecha": "2026-11-11T17:01:40.110Z",
+  "html": 88,
+  "indexables": 84,
+  "productos": 69,
+  "urlsSitemap": 84,
+  "recursosVerificados": true,
+  "preciosPublicos": false,
+  "resultados": [
+    {
+      "ruta": "404.html",
+      "noindex": true,
+      "canonical": null
+    },
+    {
+      "ruta": "buscar/index.html",
+      "noindex": true,
+      "canonical": null
+    },
+    {
+      "ruta": "carrito/index.html",
+      "noindex": true,
+      "canonical": null
+    },
+    {
+      "ruta": "catalogo/abanicos/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/abanicos/"
+    },
+    {
+      "ruta": "catalogo/aires-acondicionados/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/aires-acondicionados/"
+    },
+    {
+      "ruta": "catalogo/arroceras/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/arroceras/"
+    },
+    {
+      "ruta": "catalogo/cafeteras/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/cafeteras/"
+    },
+    {
+      "ruta": "catalogo/camas/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/camas/"
+    },
+    {
+      "ruta": "catalogo/cocinas/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/cocinas/"
+    },
+    {
+      "ruta": "catalogo/exhibidores/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/exhibidores/"
+    },
+    {
+      "ruta": "catalogo/freezer/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/freezer/"
+    },
+    {
+      "ruta": "catalogo/lavadoras/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/lavadoras/"
+    },
+    {
+      "ruta": "catalogo/licuadoras/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/licuadoras/"
+    },
+    {
+      "ruta": "catalogo/planchas/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/planchas/"
+    },
+    {
+      "ruta": "catalogo/refrigeradoras/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/refrigeradoras/"
+    },
+    {
+      "ruta": "catalogo/sandwicheras/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/sandwicheras/"
+    },
+    {
+      "ruta": "catalogo/smart-tv/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/catalogo/smart-tv/"
+    },
+    {
+      "ruta": "index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/"
+    },
+    {
+      "ruta": "pedido/index.html",
+      "noindex": true,
+      "canonical": null
+    },
+    {
+      "ruta": "productos/1/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/1/"
+    },
+    {
+      "ruta": "productos/10/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/10/"
+    },
+    {
+      "ruta": "productos/11/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/11/"
+    },
+    {
+      "ruta": "productos/12/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/12/"
+    },
+    {
+      "ruta": "productos/13/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/13/"
+    },
+    {
+      "ruta": "productos/14/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/14/"
+    },
+    {
+      "ruta": "productos/15/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/15/"
+    },
+    {
+      "ruta": "productos/16/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/16/"
+    },
+    {
+      "ruta": "productos/17/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/17/"
+    },
+    {
+      "ruta": "productos/18/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/18/"
+    },
+    {
+      "ruta": "productos/19/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/19/"
+    },
+    {
+      "ruta": "productos/2/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/2/"
+    },
+    {
+      "ruta": "productos/20/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/20/"
+    },
+    {
+      "ruta": "productos/21/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/21/"
+    },
+    {
+      "ruta": "productos/22/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/22/"
+    },
+    {
+      "ruta": "productos/23/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/23/"
+    },
+    {
+      "ruta": "productos/24/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/24/"
+    },
+    {
+      "ruta": "productos/25/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/25/"
+    },
+    {
+      "ruta": "productos/26/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/26/"
+    },
+    {
+      "ruta": "productos/27/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/27/"
+    },
+    {
+      "ruta": "productos/28/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/28/"
+    },
+    {
+      "ruta": "productos/29/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/29/"
+    },
+    {
+      "ruta": "productos/3/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/3/"
+    },
+    {
+      "ruta": "productos/30/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/30/"
+    },
+    {
+      "ruta": "productos/31/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/31/"
+    },
+    {
+      "ruta": "productos/32/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/32/"
+    },
+    {
+      "ruta": "productos/33/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/33/"
+    },
+    {
+      "ruta": "productos/34/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/34/"
+    },
+    {
+      "ruta": "productos/35/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/35/"
+    },
+    {
+      "ruta": "productos/36/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/36/"
+    },
+    {
+      "ruta": "productos/37/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/37/"
+    },
+    {
+      "ruta": "productos/38/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/38/"
+    },
+    {
+      "ruta": "productos/39/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/39/"
+    },
+    {
+      "ruta": "productos/4/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/4/"
+    },
+    {
+      "ruta": "productos/40/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/40/"
+    },
+    {
+      "ruta": "productos/41/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/41/"
+    },
+    {
+      "ruta": "productos/42/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/42/"
+    },
+    {
+      "ruta": "productos/43/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/43/"
+    },
+    {
+      "ruta": "productos/44/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/44/"
+    },
+    {
+      "ruta": "productos/45/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/45/"
+    },
+    {
+      "ruta": "productos/46/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/46/"
+    },
+    {
+      "ruta": "productos/47/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/47/"
+    },
+    {
+      "ruta": "productos/48/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/48/"
+    },
+    {
+      "ruta": "productos/49/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/49/"
+    },
+    {
+      "ruta": "productos/5/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/5/"
+    },
+    {
+      "ruta": "productos/50/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/50/"
+    },
+    {
+      "ruta": "productos/51/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/51/"
+    },
+    {
+      "ruta": "productos/52/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/52/"
+    },
+    {
+      "ruta": "productos/53/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/53/"
+    },
+    {
+      "ruta": "productos/54/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/54/"
+    },
+    {
+      "ruta": "productos/55/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/55/"
+    },
+    {
+      "ruta": "productos/56/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/56/"
+    },
+    {
+      "ruta": "productos/57/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/57/"
+    },
+    {
+      "ruta": "productos/58/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/58/"
+    },
+    {
+      "ruta": "productos/59/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/59/"
+    },
+    {
+      "ruta": "productos/6/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/6/"
+    },
+    {
+      "ruta": "productos/60/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/60/"
+    },
+    {
+      "ruta": "productos/61/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/61/"
+    },
+    {
+      "ruta": "productos/62/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/62/"
+    },
+    {
+      "ruta": "productos/63/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/63/"
+    },
+    {
+      "ruta": "productos/64/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/64/"
+    },
+    {
+      "ruta": "productos/65/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/65/"
+    },
+    {
+      "ruta": "productos/66/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/66/"
+    },
+    {
+      "ruta": "productos/67/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/67/"
+    },
+    {
+      "ruta": "productos/68/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/68/"
+    },
+    {
+      "ruta": "productos/69/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/69/"
+    },
+    {
+      "ruta": "productos/7/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/7/"
+    },
+    {
+      "ruta": "productos/8/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/8/"
+    },
+    {
+      "ruta": "productos/9/index.html",
+      "noindex": false,
+      "canonical": "https://jorge1809.github.io/click-casa/productos/9/"
+    }
+  ]
+}

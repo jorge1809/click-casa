@@ -69,7 +69,7 @@ try {
   if (!dominio) {
     console.log("Sitemap omitido: configura VITE_SITE_URL en .env.production.");
   } else {
-    const urlBase = new URL(dominio);
+    const urlBase = new URL(dominio.endsWith("/") ? dominio : dominio + "/");
 
     if (
       urlBase.protocol !== "https:" ||
@@ -91,10 +91,11 @@ try {
     const rutasUnicas = [...new Set(rutas)];
 
     const urls = rutasUnicas.map((ruta) => {
-      const url = new URL(ruta, urlBase).href;
+      const url = new URL(ruta.replace(/^\/+/, ""), urlBase);
+      if (!url.pathname.endsWith("/")) url.pathname += "/";
 
       return `  <url>
-    <loc>${escaparXML(url)}</loc>
+    <loc>${escaparXML(url.href)}</loc>
   </url>`;
     });
 
@@ -107,7 +108,7 @@ ${urls.join("\n")}
     const robots = `User-agent: *
 Allow: /
 
-Sitemap: ${new URL("/sitemap.xml", urlBase).href}
+Sitemap: ${new URL("sitemap.xml", urlBase).href}
 `;
 
     await writeFile(

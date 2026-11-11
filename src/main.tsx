@@ -3,7 +3,6 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 
 import App from "./App";
-import CarritoProvider from "./context/CarritoProvider";
 import "./index.css";
 
 const contenedor = document.getElementById("root");
@@ -15,9 +14,7 @@ if (!contenedor) {
 const aplicacion = (
   <StrictMode>
     <BrowserRouter basename={import.meta.env.BASE_URL}>
-      <CarritoProvider>
-        <App />
-      </CarritoProvider>
+      <App />
     </BrowserRouter>
   </StrictMode>
 );

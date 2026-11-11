@@ -1,10 +1,17 @@
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { useLocation } from "react-router";
 
 function ScrollAlInicio() {
   const { pathname, search, hash } = useLocation();
+  const ultimaRuta = useRef(pathname);
 
   useLayoutEffect(() => {
+    if (ultimaRuta.current !== pathname && !hash) {
+      document
+        .getElementById("contenido-principal")
+        ?.focus({ preventScroll: true });
+    }
+    ultimaRuta.current = pathname;
     // Al navegar a otra página, comenzar desde arriba.
     if (!hash) {
       window.scrollTo({
@@ -41,14 +48,10 @@ function ScrollAlInicio() {
         return;
       }
 
-      const header = document.querySelector<HTMLElement>(".header");
-
-      const alturaHeader = header?.getBoundingClientRect().height ?? 0;
-
       const posicionElemento =
         elemento.getBoundingClientRect().top + window.scrollY;
 
-      const posicionFinal = Math.max(0, posicionElemento - alturaHeader - 12);
+      const posicionFinal = Math.max(0, posicionElemento - 16);
 
       window.scrollTo({
         top: posicionFinal,

@@ -8,13 +8,10 @@ import {
   MapPin,
   Menu,
   Search,
-  ShoppingCart,
   Users,
   X,
 } from "lucide-react";
-import { useCarrito } from "../../hooks/useCarrito";
 import { rutaPublica } from "../../utils/rutaPublica";
-import { funcionalidades } from "../../config/funcionalidades";
 import "./Header.css";
 
 const enlaces = [
@@ -34,12 +31,10 @@ function Header() {
     texto: string;
   } | null>(null);
   const botonMenuRef = useRef<HTMLButtonElement>(null);
-  const { items } = useCarrito();
-  const totalProductos = items.length;
 
   const rutaActual = `${location.pathname}${location.search}${location.hash}`;
   const consultaActual =
-    location.pathname === "/buscar"
+    location.pathname.replace(/\/+$/, "") === "/buscar"
       ? (new URLSearchParams(location.search).get("q") ?? "")
       : "";
   const busqueda =
@@ -60,7 +55,7 @@ function Header() {
     const termino = busqueda.trim();
     if (!termino) return;
     cerrarMenu();
-    navigate(`/buscar?q=${encodeURIComponent(termino)}`);
+    navigate(`/buscar/?q=${encodeURIComponent(termino)}`);
   }
 
   function renderBuscador(id: string) {
@@ -87,99 +82,78 @@ function Header() {
   }
 
   return (
-    <header
-      className="header"
-      onKeyDown={(event) => {
-        if (event.key === "Escape" && menuAbierto) {
-          cerrarMenu();
-          botonMenuRef.current?.focus();
-        }
-      }}
-    >
-      <div className="header__contenido">
-        <Link
-          className="header__logo"
-          to="/"
-          onClick={cerrarMenu}
-          aria-label="Click Casa, ir al inicio"
-        >
-          <img
-            src={rutaPublica("/images/logo-click-casa.webp")}
-            alt="Click Casa"
-            className="header__logo-imagen"
-          />
-        </Link>
-
-        <nav className="header__nav" aria-label="Navegación principal">
-          {enlaces.map((enlace) => (
-            <Link key={enlace.href} to={enlace.href}>
-              {enlace.texto}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="header__buscador-escritorio">
-          {renderBuscador("busqueda-escritorio")}
-        </div>
-
-        {funcionalidades.carritoHabilitado && (
+    <>
+      <a className="saltar-contenido" href="#contenido-principal">
+        Saltar al contenido
+      </a>
+      <header
+        className="header"
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && menuAbierto) {
+            cerrarMenu();
+            botonMenuRef.current?.focus();
+          }
+        }}
+      >
+        <div className="header__contenido">
           <Link
-            className="header__carrito"
-            to="/carrito"
+            className="header__logo"
+            to="/"
             onClick={cerrarMenu}
-            aria-label={`Carrito con ${totalProductos} productos`}
+            aria-label="Click Casa, ir al inicio"
           >
-            <ShoppingCart size={22} aria-hidden="true" />
-            <span>Carrito</span>
-            {totalProductos > 0 && (
-              <span className="header__contador">{totalProductos}</span>
+            <img
+              src={rutaPublica("/images/logo-click-casa.webp")}
+              alt="Click Casa"
+              className="header__logo-imagen"
+            />
+          </Link>
+
+          <nav className="header__nav" aria-label="Navegación principal">
+            {enlaces.map((enlace) => (
+              <Link key={enlace.href} to={enlace.href}>
+                {enlace.texto}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="header__buscador-escritorio">
+            {renderBuscador("busqueda-escritorio")}
+          </div>
+
+          <button
+            ref={botonMenuRef}
+            className="header__menu-boton"
+            type="button"
+            aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuAbierto}
+            aria-controls="menu-movil"
+            onClick={() => setMenuAbierto((abierto) => !abierto)}
+          >
+            {menuAbierto ? (
+              <X size={27} aria-hidden="true" />
+            ) : (
+              <Menu size={27} aria-hidden="true" />
             )}
-          </Link>
-        )}
-
-        <button
-          ref={botonMenuRef}
-          className="header__menu-boton"
-          type="button"
-          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={menuAbierto}
-          aria-controls="menu-movil"
-          onClick={() => setMenuAbierto((abierto) => !abierto)}
-        >
-          {menuAbierto ? (
-            <X size={27} aria-hidden="true" />
-          ) : (
-            <Menu size={27} aria-hidden="true" />
-          )}
-        </button>
-      </div>
-
-      <div className="menu-movil" id="menu-movil" hidden={!menuAbierto}>
-        <div className="menu-movil__buscador">
-          {renderBuscador("busqueda-movil")}
+          </button>
         </div>
 
-        <nav className="menu-movil__enlaces" aria-label="Navegación móvil">
-          {enlaces.map(({ href, texto, Icono }) => (
-            <Link key={href} to={href} onClick={cerrarMenu}>
-              <Icono size={21} strokeWidth={2} aria-hidden="true" />
-              <span>{texto}</span>
-            </Link>
-          ))}
-        </nav>
+        <div className="menu-movil" id="menu-movil" hidden={!menuAbierto}>
+          <div className="menu-movil__buscador">
+            {renderBuscador("busqueda-movil")}
+          </div>
 
-        {funcionalidades.carritoHabilitado && (
-          <Link
-            className="menu-movil__carrito"
-            to="/carrito"
-            onClick={cerrarMenu}
-          >
-            <ShoppingCart size={21} aria-hidden="true" />
-            <span>Mi carrito</span>
-          </Link>
-        )}
-      </div>
-    </header>
+          <nav className="menu-movil__enlaces" aria-label="Navegación móvil">
+            {enlaces.map(({ href, texto, Icono }) => (
+              <Link key={href} to={href} onClick={cerrarMenu}>
+                <Icono size={21} strokeWidth={2} aria-hidden="true" />
+                <span>{texto}</span>
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </header>
+    </>
   );
 }
 

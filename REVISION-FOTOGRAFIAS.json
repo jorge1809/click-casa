@@ -1,0 +1,416 @@
+[
+  {
+    "id": 1,
+    "nombre": "CHALLENGER CH-FR221INOX 8PC CÚBICO",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 2,
+    "nombre": "Hisense RS3P428NEDA2",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 3,
+    "nombre": "Minibar RC 88 3.5",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 4,
+    "nombre": "Minibar RCA 88R Litros",
+    "fotoSeleccionada": 5,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 5,
+    "nombre": "Refrigeradora Frigidaire FRTM32G3HPS",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 6,
+    "nombre": "Refrigeradora Frigidaire FRTS12K3HTS",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 7,
+    "nombre": "Refrigeradora Frigidarei 25G3",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 8,
+    "nombre": "Refrigeradora Frigidarei FRTM13G3",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 9,
+    "nombre": "Refrigeradora GRS GRNF15XIO2",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 10,
+    "nombre": "Refrigeradora Royal RF73",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 11,
+    "nombre": "SamDy 8 Pies Cúbicos SD-213NVSSD",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 12,
+    "nombre": "Tornado semiauto 13 kg",
+    "fotoSeleccionada": 5,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 13,
+    "nombre": "Hisense 32 A4",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 14,
+    "nombre": "LG 43 NU80B Año 2026",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 15,
+    "nombre": "Samsung 32 H5000F 32 hd",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 16,
+    "nombre": "Samsung 65 U8000H 4k",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 17,
+    "nombre": "Smart TV Coby 32",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 18,
+    "nombre": "Smart tv LG 50 NU80B Año 2026",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 19,
+    "nombre": "Smart TV Sankey 32",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 20,
+    "nombre": "Smart tv TCL 50 QLED 4k",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 21,
+    "nombre": "Cocina GRS de 6 Quemadores",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 22,
+    "nombre": "Cocina Mabe 4 quemadores modelo 5110",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 23,
+    "nombre": "Cocina MasterSonic 4 Quemadores",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 24,
+    "nombre": "Cocina Mystic 4 Quemadores",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 25,
+    "nombre": "Cocina Premier 4 Quemadores",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 26,
+    "nombre": "Aire Gplus 18,000 BTU Inverter",
+    "fotoSeleccionada": 5,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 27,
+    "nombre": "Gplus 12,000 btu 220v standar",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 28,
+    "nombre": "Sankey 12 000 Btu110v Inverte",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 29,
+    "nombre": "Freezer Royal Horizontal Modelo RF78",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 30,
+    "nombre": "Freezer Royal RFH170 17 Pies Cúbicos",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 31,
+    "nombre": "Freezer tornado 200 libras",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 32,
+    "nombre": "Frigidaire 11 Pies FFH11S3N5AW",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 33,
+    "nombre": "Frigidaire 9 Pies FFH09",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 34,
+    "nombre": "GRS 20PC CÚBICOS MODELO GF550",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 35,
+    "nombre": "MYSTIC 18PC CÚBICO FZ520L",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 36,
+    "nombre": "Royal 12.5 Pies RFH125",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 37,
+    "nombre": "Licuadora Black + Decker BL0876-1WDLA",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 38,
+    "nombre": "Licuadora Ninja Classic",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 39,
+    "nombre": "Licuadora Oster BLST4108",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 40,
+    "nombre": "Licuadora Oster BLSTKAG-KP5",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 41,
+    "nombre": "Abanico General Air 18 GA 1825",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 42,
+    "nombre": "Abanico Oster Pared 16 55W",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 43,
+    "nombre": "Abanico Oster pedestal 18 75W",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 44,
+    "nombre": "Abanico Sankey FN 1826RC",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 45,
+    "nombre": "Abanico Sankey Pared FN 1826RC",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 46,
+    "nombre": "Abanico Sankey Pedestal FN 1738",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 47,
+    "nombre": "Abanico Sankey Techo 16 FN 1542",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 48,
+    "nombre": "Abanico Tornado Pared TR40-7 JRW",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 49,
+    "nombre": "Cafetera ACR 12 Tazas",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 50,
+    "nombre": "Cafetera Black + Decker CM0916W",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 51,
+    "nombre": "Cafetera Sankey 20 Tazas",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 52,
+    "nombre": "Oster BVSTDCS1212B-013",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 53,
+    "nombre": "Arrocera Sankey RC 10",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 54,
+    "nombre": "Arrocera Sankey RC 18TT 1.8L",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 55,
+    "nombre": "Arrocera Sankey RC 28",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 56,
+    "nombre": "Sankey RC 40, c de 23 tazas",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 57,
+    "nombre": "black + Decker   IRBD300",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 58,
+    "nombre": "Black + Decker IRBD100",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 59,
+    "nombre": "Plancha Oster 7002",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 60,
+    "nombre": "Plancha Oster 7002 Violeta",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 61,
+    "nombre": "Plancha Oster modelo 3801",
+    "fotoSeleccionada": 4,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 62,
+    "nombre": "vaporizador Portatil Oster",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 63,
+    "nombre": "Sandwichera MasterSonic MS-ED609B",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 64,
+    "nombre": "Sandwichera Sankey SW-24BK4",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 65,
+    "nombre": "Exhibidor GRS GLS 1100FF",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": true
+  },
+  {
+    "id": 66,
+    "nombre": "Exhibidor GRS GLS 500FF",
+    "fotoSeleccionada": 3,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 67,
+    "nombre": "Exhibidor GRS GLS 700FF",
+    "fotoSeleccionada": 2,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 68,
+    "nombre": "Exhibidor Oster 8.3 Pies Cúbicos Modelo 270B",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": false
+  },
+  {
+    "id": 69,
+    "nombre": "Cama matrimonial Olympia",
+    "fotoSeleccionada": 1,
+    "pendienteFrontal": true
+  }
+]

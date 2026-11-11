@@ -16,7 +16,7 @@ function PaginaNoEncontrada({
   descripcion = "La página que buscas no está disponible o su dirección ha cambiado. Explora nuestro catálogo de electrodomésticos y artículos para el hogar.",
 }: PaginaNoEncontradaProps) {
   return (
-    <main className="categoria-error">
+    <main className="categoria-error" id="contenido-principal" tabIndex={-1}>
       <SEO titulo={titulo} descripcion={descripcion} noIndex />
 
       <div className="categoria-error__contenido">

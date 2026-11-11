@@ -3,22 +3,17 @@ import { Link } from "react-router";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowUpRight,
-  Check,
   ChevronLeft,
   ChevronRight,
   Expand,
   ImageOff,
   MessageCircle,
-  ShoppingCart,
   X,
 } from "lucide-react";
 
 import type { Producto } from "../../types/Producto";
 import type { CategoriaProducto } from "../../types/CategoriaProducto";
-import { precioEnUSD, precioEnNIO } from "../../config/moneda";
 import { crearEnlaceWhatsApp } from "../../config/contacto";
-import { useCarrito } from "../../hooks/useCarrito";
-import { funcionalidades } from "../../config/funcionalidades";
 import "./DetalleProducto.css";
 
 interface DetalleProductoProps {
@@ -30,10 +25,12 @@ function ImagenDetalle({
   src,
   alt,
   className,
+  principal = false,
 }: {
   src: string;
   alt: string;
   className?: string;
+  principal?: boolean;
 }) {
   const [error, setError] = useState(false);
 
@@ -56,7 +53,9 @@ function ImagenDetalle({
       src={src}
       alt={alt}
       onError={() => setError(true)}
-      loading="lazy"
+      loading={principal ? "eager" : "lazy"}
+      fetchPriority={principal ? "high" : "auto"}
+      decoding="async"
     />
   );
 }
@@ -65,9 +64,6 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
   const fotografias = [
     ...new Set([producto.imagen, ...producto.galeria].filter(Boolean)),
   ];
-
-  const { items, agregarItem } = useCarrito();
-  const agregado = items.some((item) => item.productoId === producto.id);
 
   const [indiceImagen, setIndiceImagen] = useState(0);
   const [imagenAmpliada, setImagenAmpliada] = useState(false);
@@ -113,15 +109,14 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
     if (!imagenAmpliada) return;
 
     const elementoAnterior = document.activeElement;
+    const overflowAnterior = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     botonCerrarRef.current?.focus();
 
     function manejarTeclado(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setImagenAmpliada(false);
       }
-
-      if (event.key === "ArrowLeft") cambiarImagen(-1);
-      if (event.key === "ArrowRight") cambiarImagen(1);
 
       if (event.key === "Tab") {
         const controles = modalRef.current?.querySelectorAll<HTMLButtonElement>(
@@ -147,34 +142,38 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
 
     return () => {
       document.removeEventListener("keydown", manejarTeclado);
+      document.body.style.overflow = overflowAnterior;
 
       if (elementoAnterior instanceof HTMLElement) {
         elementoAnterior.focus();
       }
     };
-  }, [imagenAmpliada, cambiarImagen]);
+  }, [imagenAmpliada]);
 
-  const precioUSD = precioEnUSD(producto.precioUSD);
-  const precioNIO = precioEnNIO(producto.precioUSD);
+  useEffect(() => {
+    if (!imagenAmpliada) return;
+    function navegar(event: KeyboardEvent) {
+      if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+        event.preventDefault();
+        cambiarImagen(event.key === "ArrowLeft" ? -1 : 1);
+      }
+    }
+    document.addEventListener("keydown", navegar);
+    return () => document.removeEventListener("keydown", navegar);
+  }, [imagenAmpliada, cambiarImagen]);
 
   const mensajeWhatsApp = [
     "Hola, quisiera información sobre este producto de Click Casa:",
     "",
     `Producto: ${producto.nombre}`,
     producto.modelo ? `Modelo: ${producto.modelo}` : "",
-    ...(funcionalidades.mostrarPrecios
-      ? [
-          `Precio de referencia: ${precioUSD}`,
-          `Equivalente aproximado: ${precioNIO}`,
-        ]
-      : []),
     "",
     "¿Podrían confirmar el precio, la disponibilidad y las opciones de entrega?",
   ]
     .filter(Boolean)
     .join("\n");
   return (
-    <main className="detalle-producto">
+    <main className="detalle-producto" id="contenido-principal" tabIndex={-1}>
       <nav className="detalle-producto__ruta" aria-label="Ruta de navegación">
         <Link to="/">Inicio</Link>
         <span aria-hidden="true">/</span>
@@ -225,6 +224,7 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
                           key={imagen}
                           src={imagen}
                           className="detalle-producto__imagen"
+                          principal={indice === 0}
                           alt={`${producto.nombre}, fotografía ${indice + 1}`}
                         />
                       </div>
@@ -255,19 +255,12 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
 
         <div className="detalle-producto__contenido">
           <span className="detalle-producto__categoria">
-            {producto.marca} · {categoria.nombre}
+            {producto.marca === "Sin especificar"
+              ? categoria.nombre
+              : `${producto.marca} · ${categoria.nombre}`}
           </span>
 
           <h1>{producto.nombre}</h1>
-
-          {funcionalidades.mostrarPrecios && (
-            <>
-              <p className="detalle-producto__precio">{precioUSD}</p>
-              <p className="detalle-producto__precio-nio">
-                Aproximadamente {precioNIO}
-              </p>
-            </>
-          )}
 
           <p className="detalle-producto__descripcion">
             {producto.descripcion}
@@ -275,42 +268,21 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
 
           <p
             className={`detalle-producto__stock ${
-              producto.disponible
-                ? "detalle-producto__stock--disponible"
-                : "detalle-producto__stock--agotado"
+              producto.disponible === null
+                ? "detalle-producto__stock--consulta"
+                : producto.disponible === null
+                  ? "detalle-producto__stock--consulta"
+                  : producto.disponible
+                    ? "detalle-producto__stock--disponible"
+                    : "detalle-producto__stock--agotado"
             }`}
           >
-            {producto.disponible ? "Disponible" : "Agotado"}
+            {producto.disponible === null
+              ? "Consultar disponibilidad"
+              : producto.disponible
+                ? "Disponible"
+                : "Agotado"}
           </p>
-
-          {funcionalidades.carritoHabilitado && (
-            <>
-              <button
-                type="button"
-                className="detalle-producto__boton"
-                disabled={!producto.disponible || agregado}
-                onClick={() => agregarItem(producto.id)}
-              >
-                {agregado ? (
-                  <Check size={20} aria-hidden="true" />
-                ) : (
-                  <ShoppingCart size={20} aria-hidden="true" />
-                )}
-                {!producto.disponible
-                  ? "No disponible"
-                  : agregado
-                    ? "Agregado al carrito"
-                    : "Agregar al carrito"}
-              </button>
-
-              {agregado && producto.disponible && (
-                <Link to="/carrito" className="detalle-producto__ir-carrito">
-                  Ver carrito
-                  <ArrowUpRight size={17} />
-                </Link>
-              )}
-            </>
-          )}
 
           <a
             className="detalle-producto__whatsapp"

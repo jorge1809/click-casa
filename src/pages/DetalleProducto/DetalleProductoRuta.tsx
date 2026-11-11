@@ -31,11 +31,7 @@ function DetalleProductoRuta() {
     `${producto.descripcion} ` +
     "Consulta precios y disponibilidad por WhatsApp.";
 
-  const urlBase = import.meta.env.VITE_SITE_URL as string | undefined;
-
-  const urlProducto = urlBase
-    ? new URL(`/productos/${producto.id}`, urlBase).href
-    : `/productos/${producto.id}`;
+  const urlProducto = `/productos/${producto.id}`;
 
   return (
     <>

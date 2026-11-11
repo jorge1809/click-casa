@@ -5,10 +5,9 @@ export interface Producto {
   modelo?: string;
   descripcion: string;
   categoriaId: number;
-  precioUSD: number;
   imagen: string;
   galeria: string[];
-  disponible: boolean;
+  disponible: boolean | null;
   destacado?: boolean;
   especificaciones?: Record<string, string>;
 }

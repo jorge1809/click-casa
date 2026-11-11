@@ -62,10 +62,7 @@ function QuienesSomos() {
 
           <span>CLICK CASA</span>
 
-          <p>
-            Tus electrodomésticos,
-            <br />a solo un clic.
-          </p>
+          <p>Tus electrodomésticos a tan solo un click</p>
         </div>
 
         <span className="nosotros__visual-etiqueta">MANAGUA · NICARAGUA</span>

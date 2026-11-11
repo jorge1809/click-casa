@@ -87,11 +87,13 @@ function DondeEncontrarnos() {
             <Phone size={22} aria-hidden="true" />
 
             <div>
-              <h3>Teléfono alternativo</h3>
-
-              <a href={`tel:+${contacto.whatsapp}`}>
-                {formatearTelefono(contacto.whatsapp)}
-              </a>
+              <h3>Teléfonos</h3>
+              {contacto.telefonos.map((telefono) => (
+                <p key={telefono.numero}>
+                  <strong>{telefono.operador}: </strong>
+                  <a href={`tel:+${telefono.numero}`}>{telefono.texto}</a>
+                </p>
+              ))}
             </div>
           </div>
 

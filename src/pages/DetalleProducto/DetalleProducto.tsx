@@ -18,6 +18,7 @@ import type { CategoriaProducto } from "../../types/CategoriaProducto";
 import { precioEnUSD, precioEnNIO } from "../../config/moneda";
 import { crearEnlaceWhatsApp } from "../../config/contacto";
 import { useCarrito } from "../../hooks/useCarrito";
+import { funcionalidades } from "../../config/funcionalidades";
 import "./DetalleProducto.css";
 
 interface DetalleProductoProps {
@@ -161,14 +162,17 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
     "",
     `Producto: ${producto.nombre}`,
     producto.modelo ? `Modelo: ${producto.modelo}` : "",
-    `Precio de referencia: ${precioUSD}`,
-    `Equivalente aproximado: ${precioNIO}`,
+    ...(funcionalidades.mostrarPrecios
+      ? [
+          `Precio de referencia: ${precioUSD}`,
+          `Equivalente aproximado: ${precioNIO}`,
+        ]
+      : []),
     "",
-    "¿Podrían confirmar el precio, la disponibilidad y la entrega?",
+    "¿Podrían confirmar el precio, la disponibilidad y las opciones de entrega?",
   ]
     .filter(Boolean)
     .join("\n");
-
   return (
     <main className="detalle-producto">
       <nav className="detalle-producto__ruta" aria-label="Ruta de navegación">
@@ -199,7 +203,10 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
                       emblaApi?.scrollTo(indice);
                     }}
                   >
-                    <ImagenDetalle src={imagen} alt={`Miniatura ${indice + 1}`} />
+                    <ImagenDetalle
+                      src={imagen}
+                      alt={`Miniatura ${indice + 1}`}
+                    />
                   </button>
                 ))}
               </div>
@@ -253,11 +260,14 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
 
           <h1>{producto.nombre}</h1>
 
-          <p className="detalle-producto__precio">{precioUSD}</p>
-
-          <p className="detalle-producto__precio-nio">
-            Aproximadamente {precioNIO}
-          </p>
+          {funcionalidades.mostrarPrecios && (
+            <>
+              <p className="detalle-producto__precio">{precioUSD}</p>
+              <p className="detalle-producto__precio-nio">
+                Aproximadamente {precioNIO}
+              </p>
+            </>
+          )}
 
           <p className="detalle-producto__descripcion">
             {producto.descripcion}
@@ -273,30 +283,33 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
             {producto.disponible ? "Disponible" : "Agotado"}
           </p>
 
-          <button
-            type="button"
-            className="detalle-producto__boton"
-            disabled={!producto.disponible || agregado}
-            onClick={() => agregarItem(producto.id)}
-          >
-            {agregado ? (
-              <Check size={20} aria-hidden="true" />
-            ) : (
-              <ShoppingCart size={20} aria-hidden="true" />
-            )}
+          {funcionalidades.carritoHabilitado && (
+            <>
+              <button
+                type="button"
+                className="detalle-producto__boton"
+                disabled={!producto.disponible || agregado}
+                onClick={() => agregarItem(producto.id)}
+              >
+                {agregado ? (
+                  <Check size={20} aria-hidden="true" />
+                ) : (
+                  <ShoppingCart size={20} aria-hidden="true" />
+                )}
+                {!producto.disponible
+                  ? "No disponible"
+                  : agregado
+                    ? "Agregado al carrito"
+                    : "Agregar al carrito"}
+              </button>
 
-            {!producto.disponible
-              ? "No disponible"
-              : agregado
-                ? "Agregado al carrito"
-                : "Agregar al carrito"}
-          </button>
-
-          {agregado && producto.disponible && (
-            <Link to="/carrito" className="detalle-producto__ir-carrito">
-              Ver carrito
-              <ArrowUpRight size={17} />
-            </Link>
+              {agregado && producto.disponible && (
+                <Link to="/carrito" className="detalle-producto__ir-carrito">
+                  Ver carrito
+                  <ArrowUpRight size={17} />
+                </Link>
+              )}
+            </>
           )}
 
           <a
@@ -311,10 +324,9 @@ function DetalleProducto({ producto, categoria }: DetalleProductoProps) {
           </a>
 
           <p className="detalle-producto__nota">
-            Los precios publicados son referenciales y están sujetos a
-            confirmación. Consulta disponibilidad y opciones de entrega.
+            Consulta el precio actualizado, la disponibilidad y las opciones de
+            entrega directamente con nuestro equipo por WhatsApp.
           </p>
-
           {producto.especificaciones &&
             Object.keys(producto.especificaciones).length > 0 && (
               <section className="detalle-producto__especificaciones">

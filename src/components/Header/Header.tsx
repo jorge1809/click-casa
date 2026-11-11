@@ -1,53 +1,54 @@
 import { useRef, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router";
 import type { FormEvent } from "react";
-import { Menu, Search, ShoppingCart, X } from "lucide-react";
-
+import {
+  Grid2X2,
+  Home,
+  Mail,
+  MapPin,
+  Menu,
+  Search,
+  ShoppingCart,
+  Users,
+  X,
+} from "lucide-react";
 import { useCarrito } from "../../hooks/useCarrito";
 import { rutaPublica } from "../../utils/rutaPublica";
-
+import { funcionalidades } from "../../config/funcionalidades";
 import "./Header.css";
 
 const enlaces = [
-  { href: "/", texto: "Inicio" },
-  { href: "/#catalogo", texto: "Catálogo" },
-  { href: "/#nosotros", texto: "Quiénes somos" },
-  { href: "/#ubicacion", texto: "Dónde encontrarnos" },
-  { href: "/#contacto", texto: "Contacto" },
+  { href: "/", texto: "Inicio", Icono: Home },
+  { href: "/#catalogo", texto: "Catálogo", Icono: Grid2X2 },
+  { href: "/#nosotros", texto: "Quiénes somos", Icono: Users },
+  { href: "/#ubicacion", texto: "Dónde encontrarnos", Icono: MapPin },
+  { href: "/#contacto", texto: "Contacto", Icono: Mail },
 ];
 
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-
   const [menuAbierto, setMenuAbierto] = useState(false);
   const [busquedaEditada, setBusquedaEditada] = useState<{
     ruta: string;
     texto: string;
   } | null>(null);
-
   const botonMenuRef = useRef<HTMLButtonElement>(null);
-
   const { items } = useCarrito();
   const totalProductos = items.length;
 
   const rutaActual = `${location.pathname}${location.search}${location.hash}`;
-
   const consultaActual =
     location.pathname === "/buscar"
       ? (new URLSearchParams(location.search).get("q") ?? "")
       : "";
-
   const busqueda =
     busquedaEditada?.ruta === rutaActual
       ? busquedaEditada.texto
       : consultaActual;
 
   function actualizarBusqueda(texto: string) {
-    setBusquedaEditada({
-      ruta: rutaActual,
-      texto,
-    });
+    setBusquedaEditada({ ruta: rutaActual, texto });
   }
 
   function cerrarMenu() {
@@ -56,13 +57,33 @@ function Header() {
 
   function buscarProducto(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
     const termino = busqueda.trim();
-
     if (!termino) return;
-
     cerrarMenu();
     navigate(`/buscar?q=${encodeURIComponent(termino)}`);
+  }
+
+  function renderBuscador(id: string) {
+    return (
+      <form
+        className="header__buscador"
+        role="search"
+        onSubmit={buscarProducto}
+      >
+        <input
+          id={id}
+          type="search"
+          value={busqueda}
+          onChange={(event) => actualizarBusqueda(event.target.value)}
+          placeholder="¿Qué producto estás buscando?"
+          aria-label="Buscar productos"
+          maxLength={100}
+        />
+        <button type="submit" aria-label="Buscar productos">
+          <Search size={21} aria-hidden="true" />
+        </button>
+      </form>
+    );
   }
 
   return (
@@ -89,38 +110,32 @@ function Header() {
           />
         </Link>
 
-        <form
-          className="header__buscador"
-          role="search"
-          onSubmit={buscarProducto}
-        >
-          <input
-            type="search"
-            value={busqueda}
-            onChange={(event) => actualizarBusqueda(event.target.value)}
-            placeholder="¿Qué producto estás buscando?"
-            aria-label="Buscar productos"
-            maxLength={100}
-          />
+        <nav className="header__nav" aria-label="Navegación principal">
+          {enlaces.map((enlace) => (
+            <Link key={enlace.href} to={enlace.href}>
+              {enlace.texto}
+            </Link>
+          ))}
+        </nav>
 
-          <button type="submit" aria-label="Buscar productos">
-            <Search size={21} aria-hidden="true" />
-          </button>
-        </form>
+        <div className="header__buscador-escritorio">
+          {renderBuscador("busqueda-escritorio")}
+        </div>
 
-        <Link
-          className="header__carrito"
-          to="/carrito"
-          onClick={cerrarMenu}
-          aria-label={`Carrito con ${totalProductos} productos`}
-        >
-          <ShoppingCart size={24} aria-hidden="true" />
-          <span>Carrito</span>
-
-          {totalProductos > 0 && (
-            <span className="header__contador">{totalProductos}</span>
-          )}
-        </Link>
+        {funcionalidades.carritoHabilitado && (
+          <Link
+            className="header__carrito"
+            to="/carrito"
+            onClick={cerrarMenu}
+            aria-label={`Carrito con ${totalProductos} productos`}
+          >
+            <ShoppingCart size={22} aria-hidden="true" />
+            <span>Carrito</span>
+            {totalProductos > 0 && (
+              <span className="header__contador">{totalProductos}</span>
+            )}
+          </Link>
+        )}
 
         <button
           ref={botonMenuRef}
@@ -132,36 +147,38 @@ function Header() {
           onClick={() => setMenuAbierto((abierto) => !abierto)}
         >
           {menuAbierto ? (
-            <X size={24} aria-hidden="true" />
+            <X size={27} aria-hidden="true" />
           ) : (
-            <Menu size={24} aria-hidden="true" />
+            <Menu size={27} aria-hidden="true" />
           )}
         </button>
       </div>
 
-      <nav className="header__nav" aria-label="Navegación principal">
-        <div className="header__nav-contenido">
-          {enlaces.map((enlace) => (
-            <Link key={enlace.href} to={enlace.href}>
-              {enlace.texto}
+      <div className="menu-movil" id="menu-movil" hidden={!menuAbierto}>
+        <div className="menu-movil__buscador">
+          {renderBuscador("busqueda-movil")}
+        </div>
+
+        <nav className="menu-movil__enlaces" aria-label="Navegación móvil">
+          {enlaces.map(({ href, texto, Icono }) => (
+            <Link key={href} to={href} onClick={cerrarMenu}>
+              <Icono size={21} strokeWidth={2} aria-hidden="true" />
+              <span>{texto}</span>
             </Link>
           ))}
-        </div>
-      </nav>
+        </nav>
 
-      <nav
-        className="menu-movil"
-        id="menu-movil"
-        aria-label="Navegación móvil"
-        hidden={!menuAbierto}
-      >
-        {enlaces.map((enlace) => (
-          <Link key={enlace.href} to={enlace.href} onClick={cerrarMenu}>
-            {enlace.texto}
+        {funcionalidades.carritoHabilitado && (
+          <Link
+            className="menu-movil__carrito"
+            to="/carrito"
+            onClick={cerrarMenu}
+          >
+            <ShoppingCart size={21} aria-hidden="true" />
+            <span>Mi carrito</span>
           </Link>
-        ))}
-      </nav>
-      <div className="announcement">Tus electrodomésticos, a solo un clic</div>
+        )}
+      </div>
     </header>
   );
 }

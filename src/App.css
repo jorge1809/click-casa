@@ -1,13 +1,9 @@
-:root {
-  /* Espacio reservado para el Header fijo */
-  --altura-header-fijo: 124px;
-}
+/* CLICK CASA — LAYOUT PRINCIPAL */
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  padding-top: var(--altura-header-fijo);
 }
 
 #root > main {
@@ -18,6 +14,8 @@
 .contenido-principal {
   width: 100%;
 }
+
+/* CATÁLOGO */
 
 .catalogo-seccion {
   max-width: 1200px;
@@ -57,9 +55,14 @@
   gap: 24px;
 }
 
-/* Ajuste para tablets y celulares */
-@media (max-width: 900px) {
-  :root {
-    --altura-header-fijo: 132px;
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+  .catalogo-seccion {
+    padding: 32px 16px;
+  }
+
+  .catalogo {
+    gap: 16px;
   }
 }

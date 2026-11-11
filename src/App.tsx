@@ -4,7 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import ScrollAlInicio from "./components/ScrollAlInicio/ScrollAlInicio";
 import PaginaNoEncontrada from "./components/PaginaNoEncontrada/PaginaNoEncontrada";
-
+import { funcionalidades } from "./config/funcionalidades";
 import Inicio from "./pages/Inicio/Inicio";
 import Carrito from "./pages/Carrito/Carrito";
 import CategoriaProductosRuta from "./pages/CategoriaProductos/CategoriaProductosRuta";
@@ -27,9 +27,25 @@ function App() {
 
         <Route path="/productos/:id" element={<DetalleProductoRuta />} />
 
-        <Route path="/carrito" element={<Carrito />} />
-
-        <Route path="/pedido" element={<Navigate to="/carrito" replace />} />
+        <Route
+          path="/carrito"
+          element={
+            funcionalidades.carritoHabilitado ? (
+              <Carrito />
+            ) : (
+              <Navigate to="/" replace />
+            )
+          }
+        />
+        <Route
+          path="/pedido"
+          element={
+            <Navigate
+              to={funcionalidades.carritoHabilitado ? "/carrito" : "/"}
+              replace
+            />
+          }
+        />
 
         <Route path="*" element={<PaginaNoEncontrada />} />
       </Routes>

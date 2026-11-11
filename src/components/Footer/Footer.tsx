@@ -6,6 +6,7 @@ import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
 import { categoriasProducto } from "../../data/categoriasProducto";
 import { crearEnlaceWhatsApp } from "../../config/contacto";
 import { rutaPublica } from "../../utils/rutaPublica";
+import { funcionalidades } from "../../config/funcionalidades";
 import "./Footer.css";
 
 type GrupoFooter = "productos" | "atencion" | "informacion";
@@ -130,7 +131,9 @@ function Footer() {
             aria-label="Atención al cliente"
           >
             <Link to="/#contacto">Contacto</Link>
-            <Link to="/carrito">Mi carrito</Link>
+            {funcionalidades.carritoHabilitado && (
+              <Link to="/carrito">Mi carrito</Link>
+            )}
 
             <a
               href={crearEnlaceWhatsApp(

@@ -6,7 +6,6 @@ export const logotiposMarcas: Record<string, string> = {
   "Black + Decker": "/images/marcas/black-decker.png",
   Challenger: "/images/marcas/challenger.png",
   Coby: "/images/marcas/coby.png",
-  Ford: "/images/marcas/ford.png",
   Frigidaire: "/images/marcas/frigidaire.png",
   "General Air": "/images/marcas/general-air.png",
   Gplus: "/images/marcas/gplus.png",

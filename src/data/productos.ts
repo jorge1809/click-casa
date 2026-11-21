@@ -1223,4 +1223,15 @@ export const productos: Producto[] = [
     galeria: [],
     disponible: null,
   },
+  {
+    id: 70,
+    nombre: "Refrigeradora Ford",
+    marca: "Ford",
+    descripcion:
+      "Refrigeradora Ford. Consulta con nuestro equipo el precio actualizado, las características, la disponibilidad y las opciones de entrega para tu hogar o negocio.",
+    categoriaId: 1,
+    imagen: imagenProducto("Refrigeradoras", "refrigeradora-ford.jpeg"),
+    galeria: [],
+    disponible: null,
+  },
 ];
